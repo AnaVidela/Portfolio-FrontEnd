@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+html{
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header {
+    background-color:black;
+}
+
+header section {
+    float: right; 
+    padding: 15px;
+}
+
+
+.login {
+    margin: 4px 12px;
+    padding: 4px 14px;
+    background-color: black;
+    color: aliceblue;
+    border: 1px white solid;
+    float: inherit;
+}
+
+.body {
+    background-color: black;
+}
+
+.container { 
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+.img-red {
+    border-radius: 50%;
+    float: left;
+    border:5px solid black;
+
+}
+
+.nombre {
+    padding-left: 110px;
+    font-variant: small-caps;
+}
+
+.seccion {
+    
+    background-color:whitesmoke;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    padding: 0.25rem 1rem;
+}
+
+div h1, div p, div h2{
+    margin: 0.5rem;
+}
+
+.pencil{
+    float: right;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.pencil:hover{
+    background-color: cadetblue;
+    fill: white;
+}
+
+.trash{
+    float: right;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.trash:hover{
+    background-color: cadetblue;
+    fill: white;
+}
+
