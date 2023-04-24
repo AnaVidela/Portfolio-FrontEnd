@@ -7,6 +7,7 @@ import { PortFolioService } from 'src/app/service/port-folio.service';
   styleUrls: ['./acerca-de-mi.component.css']
 })
 export class AcercaDeMiComponent implements OnInit{
+  
   miPorfolio:any;
 
   
