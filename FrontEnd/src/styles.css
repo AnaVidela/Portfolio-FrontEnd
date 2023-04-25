@@ -3,6 +3,10 @@ html{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+h2 {
+    padding: 15px;
+}
+
 header {
     background-color:black;
 }
@@ -24,6 +28,7 @@ header section {
 
 body {
     background-image: url('./assets/imagenes/ban.jpg');
+    background-position: center center;
 }
 
 .container { 
@@ -77,3 +82,8 @@ div h1, div p, div h2{
     fill: white;
 }
 
+.plus {
+    float: right;
+    margin: 0.5rem;
+    cursor: pointer;
+}

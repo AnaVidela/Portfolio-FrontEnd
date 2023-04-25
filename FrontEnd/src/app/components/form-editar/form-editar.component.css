@@ -1,8 +1,3 @@
-h1{
-    text-align: center;
-    padding: 80px;
-    color: aliceblue;
-}
 .container {
     max-width: 500px;
     margin: 80px auto;
@@ -12,6 +7,7 @@ h1{
 .card{
     padding: 50px;
     background-color: black;
+    color:aliceblue;
 }
 .sesion {
     margin: 4px 12px;
@@ -22,13 +18,3 @@ h1{
     float: inherit;
     cursor: pointer;
 }
-p {
-    color: aliceblue;
-}
-.error{
-    color: red;
-}
-
-.border-danger{
-    border-color: red;
-  }

@@ -1,7 +1,6 @@
-{"data": [
-    {
-        "nombre":"Analía Videla",
-        "descripcion": "programación"
-    }
-]
+{
+        "persona": {
+                "nombre": "Analía Videla",
+                "descripcion": "Soy alguien que esta empezando a adentrarse en el mundo de la programación"
+        }
 }

@@ -1,31 +1,52 @@
-<div><h1>Portfolio de Analía Videla</h1></div>
+<div>
+  <h1>Portfolio de Analía Videla</h1>
+</div>
 <div class="container">
   <div class=" card">
-
-
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-      <label for="floatingInput">Email </label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-      <label for="floatingPassword">Password</label>
-    </div>
-    <br>
-    <div>
-      <p>Si no esta registrado: <a routerLink="/register"><button class="btn btn-link">Registrate aquí</button></a></p>
-    </div>
-    <br>
-    <div>      
+    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+          formControlName="email">
+        <label for="email">Email </label>
+        
+      </div>
+      <div *ngIf="Mail?.errors && Mail?.touched">
+        <p *ngIf="Mail?.hasError('required')" class="error">
+          Ingrese un email
+        </p>
+        <p *ngIf="Mail?.hasError('email')" class="error">
+          Ingrese un formato valido de email
+        </p>
+      </div>
+      <div class="form-floating"><input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+        formControlName="password" [class.border-danger]="MailValid">
+        <label for="password" class="form-label">Password</label>
+        
+      </div>
+      <div *ngIf="Password?.errors && Password?.touched">
+        <p *ngIf="Password?.hasError('required')" class="error">
+          La contraseña es requerida
+        </p>
+        
+        <p *ngIf="Password?.hasError('minlength')" class="error">
+          La contreseña debe de tener 8 o más caracteres
+        </p>
+      </div>
+      <br>
+      <div>
+        <p>Si no esta registrado: <a routerLink="/register"><button class="btn btn-link">Registrate aquí</button></a>
+        </p>
+      </div>
+      <br>
+      <div>
         <button type="submit" class="btn btn-lg sesion">Iniciar Sesión</button>
-    </div>
+      </div>
+    </form>
     <div>
       <br>
       <a routerLink="/">
-      <p>Volver a la pagina principal</p>
+        <p>Volver a la pagina principal</p>
       </a>
     </div>
-
-
   </div>
 </div>
