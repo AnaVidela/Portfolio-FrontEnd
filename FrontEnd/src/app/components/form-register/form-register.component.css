@@ -22,3 +22,11 @@ h1{
     float: inherit;
     cursor: pointer;
 }
+
+.error {
+    color: crimson;
+}
+
+.border-danger{
+    border-color:crimson;
+  }

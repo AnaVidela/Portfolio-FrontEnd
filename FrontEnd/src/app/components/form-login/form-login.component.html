@@ -18,10 +18,10 @@
           Ingrese un formato valido de email
         </p>
       </div>
-      <div class="form-floating"><input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
         formControlName="password" [class.border-danger]="MailValid">
         <label for="password" class="form-label">Password</label>
-        
       </div>
       <div *ngIf="Password?.errors && Password?.touched">
         <p *ngIf="Password?.hasError('required')" class="error">

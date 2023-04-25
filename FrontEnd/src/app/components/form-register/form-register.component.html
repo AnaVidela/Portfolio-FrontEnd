@@ -5,29 +5,66 @@
 </div>
 <div class="container">
     <div class=" card">
-        <form>
+        <form [formGroup]="register" (ngSubmit)="onEnviar($event)">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name">
-                <label for="floatingInput">Nombre </label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="name"
+                formControlName="name">
+                <label for="name">Nombre </label>
+            </div>
+            <div *ngIf="Name?.hasError && Name?.touched">
+                <p *ngIf="Name?.hasError('required')" class="error">
+                    Ingrese un nombre
+                </p>
+                <p *ngIf="Name?.hasError('minlength')" class="error">
+                    Ingrese un nombre
+                </p>
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="apellido">
-                <label for="floatingInput">Apellido </label>
+                <input type="text" class="form-control" id="floatingInput" placeholder="apellido"
+                formControlName="apellido">
+                <label for="apellido" class="form-label">Apellido </label>
+            </div>
+            <div *ngIf="Apellido?.hasError && Apellido?.touched">
+                <p *ngIf="Apellido?.hasError('required')" class="error">
+                    Ingrese un Apellido
+                </p>
+                <p *ngIf="Apellido?.hasError('minlength')" class="error">
+                    Ingrese un Apellido
+                </p>
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Email </label>
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                formControlName="email">
+                <label for="email">Email </label>
+            </div>
+            <div *ngIf="Mail?.hasError && Mail?.touched">
+                <p *ngIf="Mail?.hasError('required')" class="error">
+                    Ingrese un email
+                </p>
+                <p *ngIf="Mail?.hasError('email')" class="error">
+                    Ingrese un formato valido de email
+                </p>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Password</label>
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                formControlName="password" [class.border-danger]>
+                <label for="password" class="form-label">Password</label>
                 <div id="passwordHelpBlock" class="form-text">
                     La contraseña debe contener entre 8-20 caracteres.
-                </div>
-                <br>
-                <br>
-                <br>
+                </div>                
             </div>
+            <div *ngIf="Password?.errors && Password?.touched">
+                <p *ngIf="Password?.hasError('required')" class="error">
+                    La contraseña es requerida
+                </p>
+                <p *ngIf="Password?.hasError('minlength')" class="error">
+                    La contraseña debe de tener un minimo de 8 y un máximo de 20 caracteres
+                </p>
+                <p *ngIf="Password?.hasError('maxlength')" class="error">
+                    La contraseña supero el numero de caracteres permitido
+                </p>
+            </div>
+            <br>
             <div>
                 <button type="submit" class="btn btn-lg sesion">Crear cuenta</button>
             </div>
