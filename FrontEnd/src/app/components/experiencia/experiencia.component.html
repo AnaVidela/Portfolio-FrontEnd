@@ -1,18 +1,24 @@
 <div class="seccion">
     <h2>Experiencia
-      <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16" fill="currentColor">
-        <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-        <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
-      </svg>
+      <a routerLink="/editar">
+        <svg class="plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"
+          fill="currentColor">
+          <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z" />
+        </svg>
+      </a>
     </h2>
     <hr>
+    <ul>
+      <li *ngFor="let exp of experienciaList">
     <div class="row">
       <div class="col-1">
-        <img height="25px" src="https://www2.jus.gov.ar/dnrpa-site/Content/img/dnrpa-azul.png" alt="DNRPA">
+        <img height="25px" [src]="exp.img" alt="DNRPA">
       </div>
       <div class="col-9">
-        <h5>Mandataria del Automotor</h5>
-        <p> Desde 2010 hasta la actualidad</p>
+        <h5>{{exp.nombre}}</h5>
+        <p>{{exp.descripcion}}</p>
       </div>
       <div class="col-2">
         <svg class="trash" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -28,5 +34,7 @@
         </svg>
       </div>
     </div>
+      </li>
+  </ul>
     <br>
   </div>

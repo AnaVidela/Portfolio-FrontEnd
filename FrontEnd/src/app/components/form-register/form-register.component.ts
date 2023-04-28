@@ -50,6 +50,7 @@ export class FormRegisterComponent implements OnInit{
     event.preventDefault;
     if (this.register.valid){
       alert("Todo correcto ¡Enviar formulario!");
+      this.register.reset();
     }else {
       this.register.markAllAsTouched();
     }

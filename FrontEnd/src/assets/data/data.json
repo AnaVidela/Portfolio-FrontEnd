@@ -1,6 +1,38 @@
 {
         "persona": {
+                "img": "https://argentinaprograma.inti.gob.ar/pluginfile.php/238642/user/icon/moove/f1?rev=394596",
                 "nombre": "Analía Videla",
                 "descripcion": "Soy alguien que esta empezando a adentrarse en el mundo de la programación"
-        }
+        },
+        "educacion": [
+                {
+                        "link": "https://fundacionciep.com/",
+                        "img": "https://fundacionciep.com/wp-content/uploads/2019/01/logo200.png",
+                        "nombre": "Centro Integral de Enseñanza Particular",
+                        "descripcion": "Curso de Mandatario del automotor"
+                },
+                {
+                        "link": "https://www.facebook.com/ioapapizzurno/?locale=es_LA",
+                        "img": "https://scontent.frcu1-1.fna.fbcdn.net/v/t39.30808-6/302181582_564765322111288_819700889792161013_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nCdFuW3rIxIAX_K9maN&_nc_ht=scontent.frcu1-1.fna&oh=00_AfDj_KpCNeG9-N29vJLvfxVZHCW5YE030gDu-L2P9twGyw&oe=644B3C13",
+                        "nombre": "Instituto Orientado y Agrotecnico Pablo A. Pizzurno",
+                        "descripcion": "Secundario"
+                },
+                {
+                        "link": "https://www.facebook.com/people/Escuela-San-Mart%C3%ADn-Sampacho-C%C3%B3rdoba/100057334574990/",
+                        "img": "https://scontent.frcu1-1.fna.fbcdn.net/v/t1.6435-9/202426925_4366879536712667_9153209217190508149_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=174925&_nc_ohc=FsUUyfQRlp8AX8zOOXm&_nc_ht=scontent.frcu1-1.fna&oh=00_AfDDKbMvmhcfrFZjamOT-uH05eeN9kwCs-tAx_s0ywK8Ww&oe=646E19BF",
+                        "nombre": "Centro Educativo San Martin",
+                        "descripcion": "Primario"                        
+                }
+        ],
+        "experiencia":[ {
+                "img":"https://www2.jus.gov.ar/dnrpa-site/Content/img/dnrpa-azul.png",
+                "nombre":"Mandataria del Automotor",
+                "descripcion": "Desde 2010 hasta la actualidad"
+        }],
+        "proyectos":[{
+                "img":"data:image/png;base64,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",
+                "nombre":"Porfolio",
+                "descripcion":"Realizacion de porfolio "
+        }]
+
 }

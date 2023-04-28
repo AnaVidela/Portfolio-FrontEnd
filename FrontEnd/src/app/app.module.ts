@@ -23,7 +23,9 @@ import { FormEditarComponent } from './components/form-editar/form-editar.compon
 const appRoutes: Routes = [
   {path: "", component: PrincipalComponent},
   {path:"login", component: FormLoginComponent},
-  {path:"register", component: FormRegisterComponent}]
+  {path:"register", component: FormRegisterComponent},
+  {path:"editar", component: FormEditarComponent}
+]
 
 @NgModule({
   declarations: [

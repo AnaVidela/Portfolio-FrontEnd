@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-form-login',
@@ -40,6 +41,7 @@ onEnviar(event: Event) {
   event.preventDefault;
   if (this.form.valid){
     alert("Todo correcto ¡Enviar formulario!");
+    this.form.reset();
   }else {
     this.form.markAllAsTouched();
   }

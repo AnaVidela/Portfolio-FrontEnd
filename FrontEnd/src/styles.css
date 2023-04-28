@@ -86,4 +86,14 @@ div h1, div p, div h2{
     float: right;
     margin: 0.5rem;
     cursor: pointer;
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+
+}
+
+a {
+    color: black;
 }
