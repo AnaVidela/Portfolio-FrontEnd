@@ -8,16 +8,16 @@ import { PortFolioService } from 'src/app/service/port-folio.service';
 })
 export class AcercaDeMiComponent implements OnInit{
   
-  miPorfolio:any;
-
+  personaList:any; 
   
   constructor(private datosPortFolio:PortFolioService) {}
 
   ngOnInit(): void {
     this.datosPortFolio.obtenerDatos().subscribe(data =>{
       console.log(data);
-      this.miPorfolio=data;
+      this.personaList=data.persona;
     });
   }
 
+  
 }

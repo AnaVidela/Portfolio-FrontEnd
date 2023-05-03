@@ -6,10 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PortFolioService {
+  //private EducURL = "http://localhost:8080/educacion"
 
   constructor(private http:HttpClient) { }
 
   obtenerDatos():Observable<any>{
-    return this.http.get<any>('./assets/data/data.json');
-  }
-}
+    return this.http.get<any>('./assets/data/data.json'); //(this.URL + 'persona/');
+  }                                                       //(this.URL)
+}                                                           
