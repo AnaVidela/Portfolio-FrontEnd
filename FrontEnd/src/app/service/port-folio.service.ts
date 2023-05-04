@@ -1,16 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Persona } from '../clases/persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PortFolioService {
-  //private EducURL = "http://localhost:8080/educacion"
+  private apiURL = 'http://localhost:8080/persona/'
 
-  constructor(private http:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
-  obtenerDatos():Observable<any>{
-    return this.http.get<any>('./assets/data/data.json'); //(this.URL + 'persona/');
-  }                                                       //(this.URL)
+  public listaPersona():Observable<Persona[]> {
+    return this.httpClient.get<Persona[]>(this.apiURL+'ver');
+  }
+
+  public editPersona(id:number): Observable<any>{
+  return this.httpClient.put<any>(this.apiURL+`editar/${id}`,{})
+ }
 }                                                           

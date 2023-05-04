@@ -1,14 +1,14 @@
 <div class="seccion">
   <h2>
-    Acerca de mi
-    
+    Acerca de mi    
   </h2>
+  <hr>
   <ul>
     <li *ngFor="let per of personaList">
       <hr>
       <div class="row">
         <div class="col-2">
-           <img class="img-red" height="100px" [src]="per.img" alt="institucion">
+           <img class="img-red" height="100px" [src]="per.img" alt="mifoto">
         
         </div>
         <div class="col-8">
@@ -16,9 +16,7 @@
           <p> {{per.descripcion}}</p>
         </div>
         <div class="col-2">
-          <app-button-trash ></app-button-trash>
-
-          <app-button-pencil></app-button-pencil>
+            <app-button-pencil></app-button-pencil>
         </div>
       </div>
       <br>
