@@ -18,4 +18,8 @@ export class PortFolioService {
   public editPersona(id:number, per: Persona): Observable<any>{
   return this.httpClient.put<any>(this.apiURL+`editar/${id}`,per)
  }
+
+ public detallePersona(id:number): Observable<Persona> {
+  return this.httpClient.get<Persona>(this.apiURL+`detail/${id}`);
+}
 }                                                           

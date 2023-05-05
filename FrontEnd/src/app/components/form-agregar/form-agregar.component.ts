@@ -64,7 +64,6 @@ export class FormAgregarComponent implements OnInit {
   }
 
   onCreate(): void {
-
     this.link = `${this.crear.value.link}`;
     this.img = `${this.crear.value.url}`;
     this.nombre = `${this.crear.value.titulo}`;

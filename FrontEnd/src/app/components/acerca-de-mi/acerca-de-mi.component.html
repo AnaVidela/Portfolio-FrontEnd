@@ -7,15 +7,16 @@
       <hr>
       <div class="row">
         <div class="col-2">
+          <a target="_blank" [href]="per.link">
            <img class="img-red" height="100px" [src]="per.img" alt="mifoto">
-        
+          </a>
         </div>
         <div class="col-8">
           <h5>{{per.nombre}}</h5>
           <p> {{per.descripcion}}</p>
         </div>
         <div class="col-2">
-            <app-button-pencil></app-button-pencil>
+            <app-button-pencil routerLink="/editarp/{{per.id}}"></app-button-pencil>
         </div>
       </div>
       <br>
