@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class FormLoginComponent  implements OnInit{
 form: FormGroup;
-
+ 
   constructor(private formBuilder: FormBuilder){
     this.form= this.formBuilder.group({
       password: ['',[Validators.required, Validators.minLength(8)]],
@@ -19,7 +19,8 @@ form: FormGroup;
     })
   }
 
-ngOnInit(): void {}
+ngOnInit(): void {
+}
 
 get Password(){
   return this.form.get("password");

@@ -18,8 +18,8 @@ public listaeduc():Observable<Educacion[]> {
   return this.httpClient.get<Educacion[]>(this.apiURL+'ver');
 }
 
- public editEducacion(id:number): Observable<any>{
-return this.httpClient.put<any>(this.apiURL+`editar/${id}`,{})
+ public editEducacion(id:number, educ:Educacion): Observable<any>{
+return this.httpClient.put<any>(this.apiURL+`editar/${id}`,educ)
 } 
 
 public agregarEducacion(educ: Educacion): Observable<any> {
@@ -28,6 +28,10 @@ public agregarEducacion(educ: Educacion): Observable<any> {
 
 public borrarEducacion(id:number): Observable<any>{
   return this.httpClient.delete<any>(this.apiURL+`delete/${id}`)
+}
+
+public detalleEducacion(id:number): Observable<Educacion> {
+  return this.httpClient.get<Educacion>(this.apiURL+`detail/${id}`);
 }
 
 }

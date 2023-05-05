@@ -1,27 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Educacion } from 'src/app/clases/educacion';
 import { EducService } from 'src/app/service/educ.service';
 
 @Component({
-  selector: 'app-form-editar',
-  templateUrl: './form-editar.component.html',
-  styleUrls: ['./form-editar.component.css']
+  selector: 'app-form-agregar',
+  templateUrl: './form-agregar.component.html',
+  styleUrls: ['./form-agregar.component.css']
 })
-export class FormEditarComponent implements OnInit {
-  guardar: FormGroup;
-  link: string ='';
+export class FormAgregarComponent implements OnInit {
+  crear: FormGroup;
+  link: string = '';
   img: string = '';
   nombre: string = '';
   descripcion: string = '';
-  edu: Educacion = new Educacion(this.link,this.img,this.nombre,this.descripcion);
 
   constructor(private formBuilder: FormBuilder,
     private educService: EducService,
-    private activateRoute: ActivatedRoute,
     private router: Router) {
-    this.guardar = this.formBuilder.group({
+    this.crear = this.formBuilder.group({
       link: ['', [Validators.required, Validators.minLength(5)]],
       url: ['', [Validators.required, Validators.minLength(5)]],
       titulo: ['', [Validators.required, Validators.minLength(5)]],
@@ -30,26 +28,23 @@ export class FormEditarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id= this.activateRoute.snapshot.params['id'];
-    this.educService.detalleEducacion(id).subscribe(data=>{
-      this.edu=data;
-    })
+
   }
 
   get Link() {
-    return this.guardar.get("link");
+    return this.crear.get("link");
   }
 
   get Url() {
-    return this.guardar.get("url");
+    return this.crear.get("url");
   }
 
   get Titulo() {
-    return this.guardar.get("titulo");
+    return this.crear.get("titulo");
   }
 
   get Descripcion() {
-    return this.guardar.get("descripcion");
+    return this.crear.get("descripcion");
   }
 
   get LinkValid() {
@@ -68,19 +63,17 @@ export class FormEditarComponent implements OnInit {
     return this.Descripcion?.touched && !this.Descripcion?.valid;
   }
 
-  onUpdate(): void {
-    this.link = `${this.guardar.value.link}`;
-    this.img = `${this.guardar.value.url}`;
-    this.nombre = `${this.guardar.value.titulo}`;
-    this.descripcion = `${this.guardar.value.descripcion}`;
+  onCreate(): void {
+
+    this.link = `${this.crear.value.link}`;
+    this.img = `${this.crear.value.url}`;
+    this.nombre = `${this.crear.value.titulo}`;
+    this.descripcion = `${this.crear.value.descripcion}`;
 
     const edu = new Educacion(this.link, this.img, this.nombre, this.descripcion);
-    const id= this.activateRoute.snapshot.params['id'];
-    this.educService.editEducacion(id,edu).subscribe(data =>{
+    this.educService.agregarEducacion(edu).subscribe(data => {
       this.router.navigate(['']);
- 
-    })
-
+    });
   }
 
 }

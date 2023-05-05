@@ -1,12 +1,27 @@
 <div class="container">
   <div class="card">
-    <form [formGroup]="guardar" (ngSubmit)="onGuardar($event)">
+    <form [formGroup]="guardar" (ngSubmit)="onUpdate()">
+      <div class="mb-3">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Link</span>
+          <input type="link" class="form-control" id="link" aria-describedby="basic-addon3 basic-addon4"
+          formControlName="link" [(ngModel)]="edu.link">
+        </div>
+        <div *ngIf="Link?.errors && Link?.touched">
+          <p *ngIf="Link?.hasError('required')" class="error">
+            Ingrese un link
+          </p>
+          <p *ngIf="Link?.hasError('minlength')" class="error">
+            Ingrese un link
+          </p>
+        </div>
+      </div>
       <div class="mb-3">
         <label for="url" class="form-label">Imagen</label>
         <div class="input-group">
           <span class="input-group-text" id="basic-addon3">URL</span>
           <input type="url" class="form-control" id="url" aria-describedby="basic-addon3 basic-addon4"
-           formControlName="url">
+           formControlName="url" [(ngModel)]="edu.img">
         </div>
       </div>
       <div *ngIf="Url?.errors && Url?.touched">
@@ -19,7 +34,8 @@
       </div>
       <div class="input-group">
         <span class="input-group-text">Titulo</span>
-        <textarea class="form-control" id="Titulo" formControlName="titulo"></textarea>
+        <textarea class="form-control" id="Titulo" formControlName="titulo"
+        [(ngModel)]="edu.nombre"></textarea>
       </div>
       <div *ngIf="Titulo?.errors && Titulo?.touched">
         <p *ngIf="Titulo?.hasError('required')" class="error">
@@ -32,7 +48,8 @@
       <br>
       <div class="input-group">
         <span class="input-group-text">Descripcion</span>
-        <textarea class="form-control" id="Descripcion" formControlName="descripcion"></textarea>
+        <textarea class="form-control" id="Descripcion" formControlName="descripcion"
+        [(ngModel)]="edu.descripcion"></textarea>
       </div>
       <div *ngIf="Descripcion?.errors && Descripcion?.touched">
         <p *ngIf="Descripcion?.hasError('required')" class="error">

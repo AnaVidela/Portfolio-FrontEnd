@@ -15,7 +15,7 @@ export class PortFolioService {
     return this.httpClient.get<Persona[]>(this.apiURL+'ver');
   }
 
-  public editPersona(id:number): Observable<any>{
-  return this.httpClient.put<any>(this.apiURL+`editar/${id}`,{})
+  public editPersona(id:number, per: Persona): Observable<any>{
+  return this.httpClient.put<any>(this.apiURL+`editar/${id}`,per)
  }
 }                                                           

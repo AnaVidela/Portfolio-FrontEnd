@@ -18,8 +18,8 @@ public listaexp():Observable<Experiencia[]> {
   return this.httpClient.get<Experiencia[]>(this.apiURL+'ver');
 }
 
-public editExperiencia(id:number): Observable<any>{
-return this.httpClient.put<any>(this.apiURL+`editar/${id}`,{})
+public editExperiencia(id:number, exp:Experiencia): Observable<any>{
+return this.httpClient.put<any>(this.apiURL+`editar/${id}`,exp)
 } 
 public agregarExperiencia(exp: Experiencia): Observable<any> {
   return this.httpClient.post<any>(this.apiURL+'new', exp)

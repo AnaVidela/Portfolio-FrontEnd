@@ -17,8 +17,8 @@ public listaproy():Observable<Proyectos[]> {
   return this.httpClient.get<Proyectos[]>(this.apiURL+'ver');
 }
 
-public editProy(id:number): Observable<any>{
-return this.httpClient.put<any>(this.apiURL+`editar/${id}`,{})
+public editProy(id:number, proy:Proyectos): Observable<any>{
+return this.httpClient.put<any>(this.apiURL+`editar/${id}`,proy)
 }
 
 public agregarProy(proy: Proyectos): Observable<any> {

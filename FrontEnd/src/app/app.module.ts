@@ -22,12 +22,15 @@ import { FormEditarComponent } from './components/form-editar/form-editar.compon
 import { NgChartsModule } from 'ng2-charts';
 import { ButtonTrashComponent } from './components/button-trash/button-trash.component';
 import { ButtonPencilComponent } from './components/button-pencil/button-pencil.component';
+import { FormAgregarComponent } from './components/form-agregar/form-agregar.component';
 
-const appRoutes: Routes = [
-  {path: "", component: PrincipalComponent},
-  {path:"login", component: FormLoginComponent},
-  {path:"register", component: FormRegisterComponent},
-  {path:"agregar", component: FormEditarComponent}
+const appRoutes: Routes =[
+{path: "", component: PrincipalComponent},
+{path:"login", component: FormLoginComponent},
+{path:"register", component: FormRegisterComponent},
+{path:"editar/:id", component: FormEditarComponent},
+{path:"agregar", component: FormAgregarComponent},
+{path:"**", redirectTo: "", pathMatch:'full'}
 ]
 
 @NgModule({
@@ -45,7 +48,8 @@ const appRoutes: Routes = [
     FormRegisterComponent,
     FormEditarComponent,
     ButtonTrashComponent,
-    ButtonPencilComponent
+    ButtonPencilComponent,
+    FormAgregarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Educacion } from 'src/app/clases/educacion';
 import { EducService } from 'src/app/service/educ.service';
 
@@ -7,16 +8,27 @@ import { EducService } from 'src/app/service/educ.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
-export class EducacionComponent implements OnInit{
-  educacionList:Educacion[]=[];
+export class EducacionComponent implements OnInit {
+  educacionList: Educacion[] = [];
 
-  constructor(private datosPortFolio: EducService){}
+
+  constructor(private datosPortFolio: EducService, private router: Router) { }
 
   ngOnInit(): void {
-    this.datosPortFolio.listaeduc().subscribe(data =>{
-      this.educacionList= data;
+    this.cargarEduc();
+  }
+
+  cargarEduc(): void {
+    this.datosPortFolio.listaeduc().subscribe(data => {
+      this.educacionList = data;
     })
   }
 
-  
+
+  borrar(id?:number): void {
+    this.datosPortFolio.borrarEducacion(Number(id)).subscribe(data=>{
+      this.cargarEduc();
+    })
+  }
 }
+
