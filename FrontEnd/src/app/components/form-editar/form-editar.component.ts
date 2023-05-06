@@ -73,7 +73,7 @@ export class FormEditarComponent implements OnInit {
     this.img = `${this.guardar.value.url}`;
     this.nombre = `${this.guardar.value.titulo}`;
     this.descripcion = `${this.guardar.value.descripcion}`;
-
+   
     const edu = new Educacion(this.link, this.img, this.nombre, this.descripcion);
     const id= this.activateRoute.snapshot.params['id'];
     this.educService.editEducacion(id,edu).subscribe(data =>{

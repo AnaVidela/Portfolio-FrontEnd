@@ -26,6 +26,8 @@ export class EducacionComponent implements OnInit {
 
 
   borrar(id?:number): void {
+     //agregado
+     alert("Se borrara el elemento selecionado");
     this.datosPortFolio.borrarEducacion(Number(id)).subscribe(data=>{
       this.cargarEduc();
     })

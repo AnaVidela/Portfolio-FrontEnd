@@ -68,8 +68,9 @@ export class FormAgregarComponent implements OnInit {
     this.img = `${this.crear.value.url}`;
     this.nombre = `${this.crear.value.titulo}`;
     this.descripcion = `${this.crear.value.descripcion}`;
-
     const edu = new Educacion(this.link, this.img, this.nombre, this.descripcion);
+    
+    alert("Se va a crear un nuevo registro")
     this.educService.agregarEducacion(edu).subscribe(data => {
       this.router.navigate(['']);
     });
