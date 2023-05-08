@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
-  selector: 'app-button-trash',
-  templateUrl: './button-trash.component.html',
-  styleUrls: ['./button-trash.component.css']
+  selector: 'app-button-plus',
+  templateUrl: './button-plus.component.html',
+  styleUrls: ['./button-plus.component.css']
 })
-export class ButtonTrashComponent implements OnInit {
+export class ButtonPlusComponent implements OnInit {
 
   roles: string[] = [];
   isAdmin = false;

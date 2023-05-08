@@ -3,45 +3,47 @@
 </div>
 <div class="container">
   <div class=" card">
-    <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+    <form [formGroup]="form" (ngSubmit)="onLogin()">
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-          formControlName="email">
-        <label for="email">Email </label>
-        </div>
-      <div *ngIf="Mail?.errors && Mail?.touched">
-        <p *ngIf="Mail?.hasError('required')" class="error">
-          Ingrese un email
+        <input type="text" class="form-control" id="nombreUsuario" placeholder="name" formControlName="nombreUsuario"
+          [(ngModel)]="nombreUsuario">
+        <label for="email">Nombre de Usuario </label>
+      </div>
+      <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
+        <p *ngIf="NombreUsuario?.hasError('required')" class="error">
+          Ingrese Nombre de Usuario
         </p>
-        <p *ngIf="Mail?.hasError('email')" class="error">
-          Ingrese un formato valido de email
+        <p *ngIf="NombreUsuario?.hasError('minlength')" class="error">
+          El Nombre de Usuario debe de ser de un mínimo de 4 caracteres
         </p>
       </div>
 
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-        formControlName="password" [class.border-danger]="MailValid">
+        <input type="password" class="form-control" id="Password" placeholder="Password" formControlName="password"
+          [class.border-danger]="NombreUsuarioValid" [(ngModel)]="password">
         <label for="password" class="form-label">Password</label>
       </div>
       <div *ngIf="Password?.errors && Password?.touched">
         <p *ngIf="Password?.hasError('required')" class="error">
           La contraseña es requerida
         </p>
-        
+
         <p *ngIf="Password?.hasError('minlength')" class="error">
-          La contreseña debe de tener 8 o más caracteres
+          La contreseña debe de tener 4 o más caracteres
         </p>
       </div>
       <br>
-      <div>
-        <p>Si no esta registrado: <a routerLink="/register"><button class="btn btn-link">Registrate aquí</button></a>
-        </p>
-      </div>
       <br>
       <div>
         <button type="submit" class="btn btn-lg sesion">Iniciar Sesión</button>
       </div>
     </form>
+    <br>
+    <br>
+    <div>
+      <p>Si no esta registrado: <a routerLink="/register"><button class="btn btn-link">Registrate aquí</button></a>
+      </p>
+    </div>
     <div>
       <br>
       <a routerLink="/">

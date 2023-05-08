@@ -5,36 +5,35 @@
 </div>
 <div class="container">
     <div class=" card">
-        <form [formGroup]="register" (ngSubmit)="onEnviar($event)">
+        <form [formGroup]="register" (ngSubmit)="onRegister()">
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="name"
-                formControlName="name">
-                <label for="name">Nombre </label>
+                formControlName="nombre" [(ngModel)]="nombre">
+                <label for="nombre">Nombre </label>
             </div>
-            <div *ngIf="Name?.hasError && Name?.touched">
-                <p *ngIf="Name?.hasError('required')" class="error">
+            <div *ngIf="Nombre?.hasError && Nombre?.touched">
+                <p *ngIf="Nombre?.hasError('required')" class="error">
                     Ingrese un nombre
                 </p>
-                <p *ngIf="Name?.hasError('minlength')" class="error">
-                    Ingrese un nombre
+                <p *ngIf="Nombre?.hasError('minlength')" class="error">
+                    Ingrese un nombre (minimo 3 caracteres)
                 </p>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control" id="floatingInput" placeholder="apellido"
-                formControlName="apellido">
-                <label for="apellido" class="form-label">Apellido </label>
+                formControlName="nombreUsuario" [(ngModel)]="nombreUsuario">
+                <label for="nombreUsuario" class="form-label">Nombre de Usuario </label>
             </div>
-            <div *ngIf="Apellido?.hasError && Apellido?.touched">
-                <p *ngIf="Apellido?.hasError('required')" class="error">
-                    Ingrese un Apellido
+            <div *ngIf="NombreUsuario?.hasError && NombreUsuario?.touched">
+                <p *ngIf="NombreUsuario?.hasError('required')" class="error">
+                    Ingrese nombre de usuario
                 </p>
-                <p *ngIf="Apellido?.hasError('minlength')" class="error">
-                    Ingrese un Apellido
-                </p>
+                <p *ngIf="NombreUsuario?.hasError('minlength')" class="error">
+                    Ingrese un nombre de por lo menos 4 caracteres
             </div>
             <div class="form-floating mb-3">
                 <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
-                formControlName="email">
+                formControlName="email" [(ngModel)]="email">
                 <label for="email">Email </label>
             </div>
             <div *ngIf="Mail?.hasError && Mail?.touched">
@@ -47,7 +46,8 @@
             </div>
             <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-                formControlName="password" [class.border-danger]>
+                formControlName="password" [class.border-danger] 
+                [(ngModel)]="password">
                 <label for="password" class="form-label">Password</label>
                 <div id="passwordHelpBlock" class="form-text">
                     La contraseña debe contener entre 8-20 caracteres.
@@ -58,7 +58,7 @@
                     La contraseña es requerida
                 </p>
                 <p *ngIf="Password?.hasError('minlength')" class="error">
-                    La contraseña debe de tener un minimo de 8 y un máximo de 20 caracteres
+                    La contraseña debe de tener un minimo de 4 y un máximo de 20 caracteres
                 </p>
                 <p *ngIf="Password?.hasError('maxlength')" class="error">
                     La contraseña supero el numero de caracteres permitido

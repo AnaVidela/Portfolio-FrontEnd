@@ -24,12 +24,16 @@ import { ButtonTrashComponent } from './components/button-trash/button-trash.com
 import { ButtonPencilComponent } from './components/button-pencil/button-pencil.component';
 import { FormAgregarComponent } from './components/form-agregar/form-agregar.component';
 import { FormEditPersonaComponent } from './components/form.edit.persona/form.edit.persona.component';
+import { interceptorProvide } from './service/interceptor.service';
+import { ButtonPlusComponent } from './components/button-plus/button-plus.component';
+
+
 
 const appRoutes: Routes =[
 {path: "", component: PrincipalComponent},
 {path:"login", component: FormLoginComponent},
 {path:"register", component: FormRegisterComponent},
-{path:"editar/:id", component: FormEditarComponent},
+{path:"editar/:id", component: FormEditarComponent,},
 {path:"agregar", component: FormAgregarComponent},
 {path:"editarp/:id", component: FormEditPersonaComponent},
 {path:"**", redirectTo: "", pathMatch:'full'}
@@ -52,7 +56,8 @@ const appRoutes: Routes =[
     ButtonTrashComponent,
     ButtonPencilComponent,
     FormAgregarComponent,
-    FormEditPersonaComponent
+    FormEditPersonaComponent,
+    ButtonPlusComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,7 @@ const appRoutes: Routes =[
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [interceptorProvide],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
