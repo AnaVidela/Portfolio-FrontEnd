@@ -1,27 +1,30 @@
 <div class="seccion">
-    <h2>Experiencia
-      
-        <app-button-plus></app-button-plus>
-     
-    </h2>
-    <hr>
-    <ul>
-      <li *ngFor="let exp of experienciaList">
-    <div class="row">
-      <div class="col-1">
-        <img height="25px" [src]="exp.img" alt="DNRPA">
+  <h2>Experiencia
+
+    <app-button-plus routerLink="/agregarexp"></app-button-plus>
+
+  </h2>
+  <hr>
+  <ul>
+    <li *ngFor="let exp of experienciaList">
+      <div class="row">
+        <div class="col-1">
+          <a target="_blank" [href]="exp.link">
+
+            <img height="25px" [src]="exp.img" alt="DNRPA">
+          </a>
+        </div>
+        <div class="col-9">
+          <h5>{{exp.nombre}}</h5>
+          <p>{{exp.descripcion}}</p>
+        </div>
+        <div class="col-2">
+          <app-button-trash (click)="borrar(exp.id)"></app-button-trash>
+
+          <app-button-pencil routerLink="/editarexp/{{exp.id}}"></app-button-pencil>
+        </div>
       </div>
-      <div class="col-9">
-        <h5>{{exp.nombre}}</h5>
-        <p>{{exp.descripcion}}</p>
-      </div>
-      <div class="col-2">
-        <app-button-trash></app-button-trash>
-  
-        <app-button-pencil routerLink="/editar/{{exp.id}}"></app-button-pencil>
-      </div>
-    </div>
-      </li>
+    </li>
   </ul>
-    <br>
-  </div>
+  <br>
+</div>

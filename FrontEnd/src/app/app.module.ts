@@ -26,6 +26,8 @@ import { FormAgregarComponent } from './components/form-agregar/form-agregar.com
 import { FormEditPersonaComponent } from './components/form.edit.persona/form.edit.persona.component';
 import { interceptorProvide } from './service/interceptor.service';
 import { ButtonPlusComponent } from './components/button-plus/button-plus.component';
+import { FormMasExpComponent } from './components/form.mas.exp/form.mas.exp.component';
+import { FormEditExpComponent } from './components/form.edit.exp/form.edit.exp.component';
 
 
 
@@ -36,6 +38,8 @@ const appRoutes: Routes =[
 {path:"editar/:id", component: FormEditarComponent,},
 {path:"agregar", component: FormAgregarComponent},
 {path:"editarp/:id", component: FormEditPersonaComponent},
+{path:"editarexp/:id", component: FormEditExpComponent},
+{path:"agregarexp",component: FormMasExpComponent},
 {path:"**", redirectTo: "", pathMatch:'full'}
 ]
 
@@ -58,6 +62,8 @@ const appRoutes: Routes =[
     FormAgregarComponent,
     FormEditPersonaComponent,
     ButtonPlusComponent,
+    FormMasExpComponent,
+    FormEditExpComponent,
   ],
   imports: [
     BrowserModule,

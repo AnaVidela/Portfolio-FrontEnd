@@ -6,13 +6,13 @@ import { Experiencia } from '../clases/experiencia';
 @Injectable({
   providedIn: 'root'
 })
-export class EsxpService {
+export class ExpService {
 
   private apiURL = 'http://localhost:8080/experiencia/'
 
   constructor(private httpClient:HttpClient) { }
 
-  //Experiencia
+
 
 public listaexp():Observable<Experiencia[]> {
   return this.httpClient.get<Experiencia[]>(this.apiURL+'ver');
@@ -27,6 +27,10 @@ public agregarExperiencia(exp: Experiencia): Observable<any> {
 
 public borrarExperiencia(id:number): Observable<any>{
   return this.httpClient.delete<any>(this.apiURL+`delete/${id}`)
+}
+
+public detalleExperiencia(id: number): Observable<Experiencia>{
+  return this.httpClient.get<Experiencia>(this.apiURL+`detail/${id}`); 
 }
 
 }

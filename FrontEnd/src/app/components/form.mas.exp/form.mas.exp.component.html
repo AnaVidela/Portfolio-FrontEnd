@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="card">
+      <form [formGroup]="crear" (ngSubmit)="onCreate()">
+        <div class="mb-3">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">Link</span>
+            <input type="link" class="form-control" id="link" aria-describedby="basic-addon3 basic-addon4"
+             formControlName="link">
+          </div>
+          <div *ngIf="Link?.errors && Link?.touched">
+            <p *ngIf="Link?.hasError('required')" class="error">
+              Ingrese un link
+            </p>
+            <p *ngIf="Link?.hasError('minlength')" class="error">
+              Ingrese un link
+            </p>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="url" class="form-label">Imagen</label>
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon3">URL</span>
+            <input type="url" class="form-control" id="url" aria-describedby="basic-addon3 basic-addon4"
+             formControlName="url">
+          </div>
+        </div>
+        <div *ngIf="Url?.errors && Url?.touched">
+          <p *ngIf="Url?.hasError('required')" class="error">
+            Ingrese una Url
+          </p>
+          <p *ngIf="Url?.hasError('minlength')" class="error">
+            Ingrese una Url
+          </p>
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Titulo</span>
+          <textarea class="form-control" id="Titulo" formControlName="titulo"></textarea>
+        </div>
+        <div *ngIf="Titulo?.errors && Titulo?.touched">
+          <p *ngIf="Titulo?.hasError('required')" class="error">
+            Ingrese un titulo
+          </p>
+          <p *ngIf="Titulo?.hasError('minlength')" class="error">
+            El titulo debe de contener al menos 5 caracteres
+          </p>
+        </div>
+        <br>
+        <div class="input-group">
+          <span class="input-group-text">Descripcion</span>
+          <textarea class="form-control" id="Descripcion" formControlName="descripcion"></textarea>
+        </div>
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+          <p *ngIf="Descripcion?.hasError('required')" class="error">
+            Ingrese una descripción
+          </p>
+          <p *ngIf="Descripcion?.hasError('minlength')" class="error">
+            La descripción debe de contener al menos 5 caracteres
+          </p>
+        </div>
+        <br>
+        <div>
+          <button type="submit" class="btn btn-lg sesion">Guardar</button>
+        </div>
+        <br>
+        <a routerLink=""><p>Volver sin guardar cambios</p></a>
+  
+      </form>
+    </div>
+  </div>
+
