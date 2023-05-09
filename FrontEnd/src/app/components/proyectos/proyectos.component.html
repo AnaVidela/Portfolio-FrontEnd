@@ -1,24 +1,26 @@
 <div class="seccion">
   <h2>Proyectos
-
+    <a routerLink="/agregarproy">
     <app-button-plus></app-button-plus>
-
+  </a>
   </h2>
   <hr>
   <ul>
     <li *ngFor="let proy of proyectosList">
       <div class="row">
         <div class="col-1">
-          <img height="60px" [src]="proy.img" alt="DNRPA">
+          <a target="_blank" [href]="proy.link">
+          <img height="60px" [src]="proy.img" alt="foto">
+        </a>
         </div>
         <div class="col-9">
           <h5>{{proy.nombre}}</h5>
           <p> {{proy.descripcion}}</p>
         </div>
         <div class="col-2">
-          <app-button-trash></app-button-trash>
+          <app-button-trash (click)="borrar(proy.id)"></app-button-trash> 
 
-          <app-button-pencil routerLink="/editar/{{proy.id}}"></app-button-pencil>
+          <app-button-pencil routerLink="/editarproy/{{proy.id}}"></app-button-pencil>
         </div>
       </div>
     </li>

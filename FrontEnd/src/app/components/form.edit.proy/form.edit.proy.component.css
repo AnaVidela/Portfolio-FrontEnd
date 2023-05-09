@@ -1,0 +1,23 @@
+.container {
+    max-width: 500px;
+    margin: 80px auto;
+    background-color: aliceblue;
+    padding: 24px;
+}
+.card{
+    padding: 50px;
+    background-color: black;
+    color:aliceblue;
+}
+.sesion {
+    margin: 4px 12px;
+    padding: 4px 14px;
+    background-color: black;
+    color: aliceblue;
+    border: 1px white solid;
+    float: inherit;
+    cursor: pointer;
+}
+.error{
+    color: red;
+}

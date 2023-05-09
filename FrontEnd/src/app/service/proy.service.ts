@@ -18,14 +18,18 @@ public listaproy():Observable<Proyectos[]> {
 }
 
 public editProy(id:number, proy:Proyectos): Observable<any>{
-return this.httpClient.put<any>(this.apiURL+`editar/${id}`,proy)
+return this.httpClient.put<any>(this.apiURL+`editar/${id}`,proy);
 }
 
 public agregarProy(proy: Proyectos): Observable<any> {
-  return this.httpClient.post<any>(this.apiURL+'new', proy)
+  return this.httpClient.post<any>(this.apiURL+'new', proy);
 }
 
 public borrarProy(id:number): Observable<any>{
-  return this.httpClient.delete<any>(this.apiURL+`delete/${id}`)
+  return this.httpClient.delete<any>(this.apiURL+`delete/${id}`);
+}
+
+public detalleProy(id: number): Observable<Proyectos>{
+  return this.httpClient.get<Proyectos>(this.apiURL+`detail/${id}`);
 }
 }

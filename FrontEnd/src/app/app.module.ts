@@ -28,20 +28,10 @@ import { interceptorProvide } from './service/interceptor.service';
 import { ButtonPlusComponent } from './components/button-plus/button-plus.component';
 import { FormMasExpComponent } from './components/form.mas.exp/form.mas.exp.component';
 import { FormEditExpComponent } from './components/form.edit.exp/form.edit.exp.component';
+import { FormMasProyComponent } from './components/form.mas.proy/form.mas.proy.component';
+import { FormEditProyComponent } from './components/form.edit.proy/form.edit.proy.component';
 
 
-
-const appRoutes: Routes =[
-{path: "", component: PrincipalComponent},
-{path:"login", component: FormLoginComponent},
-{path:"register", component: FormRegisterComponent},
-{path:"editar/:id", component: FormEditarComponent,},
-{path:"agregar", component: FormAgregarComponent},
-{path:"editarp/:id", component: FormEditPersonaComponent},
-{path:"editarexp/:id", component: FormEditExpComponent},
-{path:"agregarexp",component: FormMasExpComponent},
-{path:"**", redirectTo: "", pathMatch:'full'}
-]
 
 @NgModule({
   declarations: [
@@ -64,13 +54,14 @@ const appRoutes: Routes =[
     ButtonPlusComponent,
     FormMasExpComponent,
     FormEditExpComponent,
+    FormMasProyComponent,
+    FormEditProyComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     NgChartsModule,
-    RouterModule.forRoot(appRoutes, {enableTracing:true} ),
     FormsModule,
     ReactiveFormsModule
   ],
