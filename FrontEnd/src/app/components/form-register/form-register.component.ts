@@ -51,12 +51,14 @@ export class FormRegisterComponent implements OnInit{
     this.authService.nuevo(this.nuevoUsuario).subscribe (data => {
       this.isRegister = true;
       this.isRegisterFail= false;
+      alert("Cuenta creada")
       this.router.navigate(['login'])
     }, err => {
       this.isRegister = false;
       this.isRegisterFail = true;
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
+      alert("Ingrese datos al formulario")
     });
       
     }

@@ -8,7 +8,7 @@ import { Educacion } from '../clases/educacion';
 })
 export class EducService {
 
-  private apiURL = 'http://localhost:8080/educacion/'
+  private apiURL = 'https://portfolioanalia.onrender.com/educacion/'
 
   constructor(private httpClient:HttpClient) { }
 

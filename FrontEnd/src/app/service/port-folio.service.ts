@@ -7,7 +7,7 @@ import { Persona } from '../clases/persona';
   providedIn: 'root'
 })
 export class PortFolioService {
-  private apiURL = 'http://localhost:8080/persona/'
+  private apiURL = 'https://portfolioanalia.onrender.com/persona/'
 
   constructor(private httpClient:HttpClient) { }
 

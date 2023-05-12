@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ProyService {
-  private apiURL = 'http://localhost:8080/proyectos/'
+  private apiURL = 'https://portfolioanalia.onrender.com/proyectos/'
 
   constructor(private httpClient:HttpClient) { }
 

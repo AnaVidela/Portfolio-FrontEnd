@@ -10,7 +10,7 @@ import { JwtDto } from '../clases/jwt-dto';
 })
 export class AuthService {
 
-  authURL = 'http://localhost:8080/auth/';
+  authURL = 'https://portfolioanalia.onrender.com/auth/';
 
   constructor(private httpClient: HttpClient) { }
 
