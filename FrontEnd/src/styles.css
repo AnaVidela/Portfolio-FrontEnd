@@ -39,6 +39,7 @@ body {
 .img-red {
     border-radius: 50%;
     border:5px solid black;
+    width: 100%;
 
 }
 
@@ -95,4 +96,8 @@ ul {
 
 a {
     color: black;
+}
+
+.logo{
+    width: 100%;
 }
